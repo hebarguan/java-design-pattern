@@ -2,13 +2,13 @@ package com.demo.pattern.structure.adapter;
 
 /**
  * @author huaihai.guan
- * @since 2021/2/1 21:00
+ * @since 2021/2/1 20:58
  */
-public class BDriver implements Driver {
+public class MysqlDriver implements Driver {
 
     @Override
     public void run() {
 
-        System.out.println("BDriver Work");
+        System.out.println("MysqlDriver Work");
     }
 }

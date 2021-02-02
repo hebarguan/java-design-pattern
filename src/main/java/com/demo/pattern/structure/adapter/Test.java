@@ -7,15 +7,15 @@ package com.demo.pattern.structure.adapter;
 public class Test {
 
     public static void main(String[] args) {
-        BaseDriver driver = new BaseDriver();
-        driver.work();
+        // 直接实现目标方法类
+        BaseDriver baseDriver = new BaseDriver();
+        baseDriver.work();
 
-        DriverAdapter adapter = new DriverAdapter(new ADriver());
-        BaseDriver driver1 = new BaseDriver(adapter);
-        driver1.work();
+        // 添加适配器
+        DriverAdapter adapter = new DriverAdapter();
+        adapter.addDriver(new MysqlDriver());
+        adapter.addDriver(new OracleDriver());
 
-        DriverAdapter adapter2 = new DriverAdapter(new BDriver());
-        BaseDriver driver2 = new BaseDriver(adapter2);
-        driver2.work();
+        adapter.work();
     }
 }
