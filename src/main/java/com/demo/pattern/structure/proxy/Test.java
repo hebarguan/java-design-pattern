@@ -11,6 +11,6 @@ public class Test {
 
         ChinaInternet chinaInternet = new ChinaInternet(worldInternet);
         chinaInternet.access("www.google.com");
-        chinaInternet.access("www.baidu.com");
+        chinaInternet.access("www.github.com");
     }
 }
