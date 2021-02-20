@@ -1,6 +1,7 @@
 package com.demo.pattern.structure.decorator;
 
 /**
+ * 提供一个装饰类去装载基本类,并扩展新功能
  * @author huaihai.guan
  * @since 2021/2/19 20:01
  */

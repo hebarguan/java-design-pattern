@@ -1,6 +1,7 @@
 package com.demo.pattern.structure.composite;
 
 /**
+ * 通过抽象类上下级关系，把类组合到一起形成关系型树状结构
  * @author huaihai.guan
  * @since 2021/2/19 18:51
  */
