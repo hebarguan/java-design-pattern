@@ -1,4 +1,4 @@
-package com.demo.pattern;
+package com.demo.pattern.test;
 
 import java.nio.charset.StandardCharsets;
 
@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
  * @author huaihai.guan
  * @since 2021/2/1 17:06
  */
-public class TestApplication {
+public class TestTemp1 {
 
     public static void main(String[] args) {
 
