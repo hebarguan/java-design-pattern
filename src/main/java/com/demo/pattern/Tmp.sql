@@ -1,6 +1,3 @@
-concat(substr('{yyyymmdd}',1,4),'-',substr('${yyyymmdd}',5,2),'-',substr('${yyyymmdd}',7,2), ' 00:00:00')
-concat(substr('{yyyymmdd}',1,4),'-',substr('${yyyymmdd}',5,2),'-',substr('${yyyymmdd}',7,2), ' 00:00:00')
-
 --短信相关业务的理解及中间表制作
 --1）短信常见分类（两类：验证与营销，通道(发送账号)没有细分 只有根据文案去分）
 --2）receivestatus  短信返回码，可以分析短信异常情况，null后续林聪处理，上线补丁
@@ -182,6 +179,3 @@ on t1.memberid=t2.memberid and t1.smsid=t2.smsid
 drop table if exists tmp.dwd_sms_common_d_tmp00_${yesterday};
 drop table if exists tmp.dwd_sms_common_d_tmp01_${yesterday};
 drop table if exists tmp.dwd_sms_common_d_tmp02_${yesterday};
-
-
-

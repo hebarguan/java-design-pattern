@@ -20,9 +20,19 @@ public class Test4 {
 
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Student> a = new ArrayList<>();
+        List<String> j = new LinkedList<>();
+        j.add("oo");
+        j.toArray();
         HashMap<String, String> b = new HashMap<>();
         HashSet<String> d = new HashSet<>();
         LinkedBlockingQueue<String> c = new LinkedBlockingQueue<>();
+
+        b.put("a", "1");
+        b.put("b", "2");
+
+        System.out.println(b.merge("c", "3", (o, n) -> o + n));
+
+        System.exit(0);
 
         ReentrantLock reentrantLock = new ReentrantLock();
         if (reentrantLock.tryLock(2, TimeUnit.SECONDS)) {
@@ -81,6 +91,7 @@ public class Test4 {
         });
 
     }
+
 
     interface IWorker<T, K> {
         T work(List<K> a);
