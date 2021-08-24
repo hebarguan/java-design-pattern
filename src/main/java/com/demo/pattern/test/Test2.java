@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
  * @author huaihai.guan
  * @since 2021/3/29 15:03
  */
-public class TestTemp2 {
+public class Test2 {
 
-    private static TestTemp2 testTemp2 = new TestTemp2();
+    private static Test2 testTemp2 = new Test2();
 
     public static void main(String[] args) {
         ArrayList<String> g = new ArrayList<>();

@@ -1,7 +1,5 @@
 package com.demo.pattern.test;
 
-import com.sun.xml.internal.ws.util.CompletedFuture;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author huaihai.guan
  * @since 2021/6/23 16:30
  */
-public class TestTemp3 {
+public class Test3 {
 
 
     public static void main(String[] args) {
@@ -47,7 +45,7 @@ public class TestTemp3 {
 
         Map<String, CompletableFuture<String>> futureMap = new HashMap<>();
         for (int i = 0; i < 2; i++) {
-            CompletableFuture<String> futureTask = CompletableFuture.supplyAsync(TestTemp3::get, threadPoolExecutor);
+            CompletableFuture<String> futureTask = CompletableFuture.supplyAsync(Test3::get, threadPoolExecutor);
             futureMap.put("t" + i, futureTask);
         }
 

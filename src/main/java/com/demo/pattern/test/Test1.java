@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
  * @author huaihai.guan
  * @since 2021/2/1 17:06
  */
-public class TestTemp1 {
+public class Test1 {
 
     public static void main(String[] args) {
 
