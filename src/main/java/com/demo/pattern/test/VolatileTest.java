@@ -1,5 +1,7 @@
 package com.demo.pattern.test;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -12,20 +14,40 @@ public class VolatileTest {
 
     private static VolatileTest volatileTest = null;
 
+    private static boolean check = true;
+
     public VolatileTest() {
 
         System.out.println("VolatileTest been Constructor " + Thread.currentThread().getName());
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new Thread(new TestC()).start();
-        new Thread(new TestC()).start();
-        new Thread(new TestC()).start();
-        new Thread(new TestC()).start();
-//        new Thread(new TestA()).start();
-//        TimeUnit.SECONDS.sleep(1);
-//        new Thread(new TestB()).start();
+        Thread thread1 = new Thread(new TestC());
+        Thread thread2 = new Thread(new TestC());
+        Thread thread3 = new Thread(() -> {
+            while (check);
+            System.out.println("ooooooo");
+        });
+        Thread thread4 = new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(2);
+
+                System.out.println("start set check = false");
+                check = false;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        thread1.start();
+        thread2.start();
+        thread1.join();
+        thread2.join();
+        thread3.start();
+        thread4.start();
+
+        System.out.println("END");
     }
+
 
     private static VolatileTest getInstance() {
 

@@ -32,7 +32,7 @@ public class Test4 {
 
         System.out.println(b.merge("c", "3", (o, n) -> o + n));
 
-        System.exit(0);
+//        System.exit(0);
 
         ReentrantLock reentrantLock = new ReentrantLock();
         if (reentrantLock.tryLock(2, TimeUnit.SECONDS)) {
@@ -45,6 +45,17 @@ public class Test4 {
         a.add(new Student("3", 9));
         a.add(new Student("3", 10));
         a.add(new Student("4", 4));
+
+        System.out.println("sum " + a.stream().map(Student::getScore).flatMap(x -> Stream.of(x, 10)).reduce(Integer::sum).orElse(0));
+
+        a.stream().filter(x -> x.getScore() > 1).sorted().forEach(y -> {
+            System.out.println(y.getScore());
+        });
+        a.stream().sorted(Comparator.comparing(Student::getId).reversed()).forEach(y -> {
+            System.out.println(y.getId());
+        });
+
+        System.exit(0);
         Collections.sort(a);
         a.forEach(x ->
         System.out.println(x.getId()+ ":" + x.getScore()));
@@ -53,9 +64,6 @@ public class Test4 {
         h.values().stream().map(x -> new CountStudent(x.get(0).getId(), x.size())).sorted(Comparator.comparing(CountStudent::getTimes).reversed()).forEach(x -> {
 
             System.out.println(x.getId() + " - " + x.getTimes());
-        });
-        a.stream().sorted(Comparator.comparing(Student::getScore).reversed()).forEach(y -> {
-            System.out.println(y.getId());
         });
 
         System.out.println(h);
